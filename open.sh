@@ -18,10 +18,6 @@ if [ -z "$type" ]; then helpme;exit; fi
 if [ -z "$file" ]; then helpme;exit; fi
 if [ -z "$ext" ]; then helpme;exit; fi
 
-# Caso o parametro file nao estiver setando o fullpath do arquivo
-if [[ "$file" != *"/"* ]]; then
-  file="$PWD/$file"; intermux
-fi
 # Caso o PWD do usuario for o /data/data/com.termux/*, abrir arquivo no tempdir
 intermux () {
 if [[ "$PWD" == *"/data/data/com.termux"* ]]; then
@@ -30,6 +26,12 @@ if [[ "$PWD" == *"/data/data/com.termux"* ]]; then
   file="/sdcard/tmp/${file##*/}"
 fi
 }
+
+# Caso o parametro file nao estiver setando o fullpath do arquivo
+if [[ "$file" != *"/"* ]]; then
+  file="$PWD/$file"; intermux
+fi
+
 mkdir /sdcard/tmp > /dev/null 2>&1 &
 
 open () {
