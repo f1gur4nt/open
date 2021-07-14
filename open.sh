@@ -1,4 +1,4 @@
-
+#!/bin/bash
 
 type=$1
 file=$2
