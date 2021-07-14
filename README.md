@@ -1,7 +1,10 @@
 Open (version v 1.0)
-===============================
+--
 Open is a Tool that uses "am start" (Android Activity Manager) for open the most types of files, videos, images, etc.
-Atention: This tool, obviously, works only in Termux or others terminals for Android.
+
+Atention:
+--
+This tool, obviously, works only in Termux or others terminals for Android.
 
 How to Install :
 
