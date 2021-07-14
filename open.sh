@@ -15,7 +15,7 @@ echo -e "  open text /sdcard/text.txt\n"
 }
 
 createtmpdir () {
-mkdir /sdcard/.open_tmpdir > /dev/null 2>&1 &
+mkdir /sdcard/.open_tmpdir
 }
 
 if [ -z "$type" ]; then helpme;exit; fi
