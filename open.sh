@@ -14,16 +14,30 @@ echo -e "  open audio /sdcard/audio.wav"
 echo -e "  open text /sdcard/text.txt\n"
 }
 
+configtmpdir () {
+termux-setup-storage
+mkdir /sdcard/.open_tmpdir
+}
+
 if [ -z "$type" ]; then helpme;exit; fi
 if [ -z "$file" ]; then helpme;exit; fi
 if [ -z "$ext" ]; then helpme;exit; fi
 
+# Caso o parametro file nao estiver setando o fullpath do arquivo
 if [[ "$file" != *"/"* ]]; then
   file="$PWD/$file"
 fi
+# Caso o PWD do usuario for o /data/data/com.termux/*, abrir arquivo no tempdir
+if [[ "$PWD" == *"/data/data/com.termux"* ]]; then
+  rm /sdcard/.open_tmpdir/* # Pra nao ocupar espaço no dispositivo do usuario
+  cp $file /sdcard/.open_tmpdir
+  file="/sdcard/.open_tmpdir/${file##*/}"
+fi
+
+cd /sdcard/.open_tmpdir || configtmpdir
 
 open () {
 out=$(am start -a android.intent.action.VIEW -t $type/$ext -d file://$file)
 }
-
+echo $file
 open
