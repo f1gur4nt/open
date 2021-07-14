@@ -14,10 +14,6 @@ echo -e "  open audio /sdcard/audio.wav"
 echo -e "  open text /sdcard/text.txt\n"
 }
 
-if [ -z "$type" ]; then helpme;exit; fi
-if [ -z "$file" ]; then helpme;exit; fi
-if [ -z "$ext" ]; then helpme;exit; fi
-
 # Caso o PWD do usuario for o /data/data/com.termux/*, abrir arquivo no tempdir
 intermux () {
 if [[ "$PWD" == *"/data/data/com.termux"* ]]; then
@@ -26,6 +22,12 @@ if [[ "$PWD" == *"/data/data/com.termux"* ]]; then
   file="/sdcard/tmp/${file##*/}"
 fi
 }
+
+# Checa se todos os patametros estao vazios
+if [ -z "$type" ] && [ -z "$file" ] && [ -z "$ext" ]; then
+  helpme
+  exit
+fi
 
 # Caso o parametro file nao estiver setando o fullpath do arquivo
 if [[ "$file" != *"/"* ]]; then
