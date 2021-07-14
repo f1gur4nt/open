@@ -15,8 +15,10 @@ How to Install :
 <br>
 
 How to Use :
+
       $ open [filetype] [filename]
 For Example :
+
       $ open image /sdcard/DCIM/Screenshots/screenshot.png
       $ open video /sdcard/DCIM/Camera/video.mp4
       $ open music /sdcard/Musics/music.mp3
