@@ -8,11 +8,19 @@ This tool, obviously, works only in Termux or others terminals for Android.
 
 How to Install :
 --
-apt-get update -y;apt-get install git -y;git clone https://github.com/f1gur4nt/open;cd open;chmod 755 open.sh;cp open.sh $HOME/../usr/bin/open
+      $ apt-get update -y
+      $ apt-get install git -y
+      $ git clone https://github.com/f1gur4nt/open
+      $ cd open
+      $ chmod 755 open.sh
+      $ cp open.sh $HOME/../usr/bin/open
 
 How to Install using Wget :
 --
-apt update -y;apt install wget -y;wget https://raw.githubusercontent.com/f1gur4nt/open/main/open.sh;mv open.sh $HOME/../usr/bin/open;chmod 755 $HOME/../usr/bin/open
+      $ apt update -y
+        apt install wget -y
+        wget https://raw.githubusercontent.com/f1gur4nt/open/main/open.sh -O $HOME/../usr/bin/open
+        chmod 755 $HOME/../usr/bin/open
 <br>
 
 How to Use :
