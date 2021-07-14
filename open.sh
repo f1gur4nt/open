@@ -37,7 +37,9 @@ fi
 mkdir /sdcard/tmp > /dev/null 2>&1 &
 
 open () {
-out=$(am start -a android.intent.action.VIEW -t $type/$ext -d file://$file)
+  out=$(am start -a android.intent.action.VIEW -t $type/$ext -d file://$file)
 }
+
+
 echo $file
 open
