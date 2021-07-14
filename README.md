@@ -7,7 +7,7 @@ Atention:
 This tool, obviously, works only in Termux or others terminals for Android.
 
 How to Install :
-
+--
       $ apt-get update -y
       $ apt-get install git -y
       $ git clone https://github.com/f1gur4nt/open
@@ -18,10 +18,10 @@ How to Install :
 <br>
 
 How to Use :
-
+--
       $ open [filetype] [filename]
 For Example :
-
+--
       $ open image /sdcard/DCIM/Screenshots/screenshot.png
       $ open video /sdcard/DCIM/Camera/video.mp4
       $ open music /sdcard/Musics/music.mp3
