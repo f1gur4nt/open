@@ -12,7 +12,7 @@ apt-get update -y;apt-get install git -y;git clone https://github.com/f1gur4nt/o
 
 How to Install using Wget :
 --
-apt update -y;apt install wget -y;wget https://github.com/f1gur4nt/open/raw/main/open.sh -O $HOME/../usr/bin/open; chmod 755 $HOME/../usr/bin/open
+apt update -y;apt install wget -y;wget -qO- https://github.com/f1gur4nt/open/raw/main/open.sh > $HOME/../usr/bin/open; chmod 755 $HOME/../usr/bin/open
 <br>
 
 How to Use :
