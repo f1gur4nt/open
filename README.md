@@ -17,8 +17,8 @@ How to Install :
 
 How to Install using Wget :
 --
-      $ wget https://github.com/f1gur4nt/open/raw/main/open.sh -O $HOME/../usr/bin/open
-      $ chmod 755 $HOME/../usr/bin/open
+       wget https://github.com/f1gur4nt/open/raw/main/open.sh -O $HOME/../usr/bin/open
+       chmod 755 $HOME/../usr/bin/open
 <br>
 
 How to Use :
