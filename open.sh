@@ -39,5 +39,5 @@ cd /sdcard/.open_tmpdir || configtmpdir
 open () {
 out=$(am start -a android.intent.action.VIEW -t $type/$ext -d file://$file)
 }
-echo $file
+
 open
