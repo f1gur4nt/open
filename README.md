@@ -13,6 +13,7 @@ How to Install :
         git clone https://github.com/f1gur4nt/open
         cd open
         chmod 755 open.sh
+        termux-setup-storage
         cp open.sh $HOME/../usr/bin/open
 
 How to Install using Wget :
@@ -20,6 +21,7 @@ How to Install using Wget :
         apt update -y
         apt install wget -y
         wget https://raw.githubusercontent.com/f1gur4nt/open/main/open.sh -O $HOME/../usr/bin/open
+        termux-setup-storage
         chmod 755 $HOME/../usr/bin/open
 <br>
 
@@ -28,7 +30,7 @@ How to Use :
       $ open [filetype] [filename]
 For Example :
 --
-      $ open image /sdcard/DCIM/Screenshots/screenshot.png
-      $ open video /sdcard/DCIM/Camera/video.mp4
-      $ open music /sdcard/Musics/music.mp3
-      $ open text /sdcard/texto.txt
+      $ open /sdcard/DCIM/Screenshots/screenshot.png
+      $ open /sdcard/DCIM/Camera/video.mp4
+      $ open /sdcard/Musics/music.mp3
+      $ open /sdcard/texto.txt
