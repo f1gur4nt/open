@@ -42,7 +42,5 @@ open () {
   out=$(am start -a android.intent.action.VIEW -t $mimetype -d file://$file)
 }
 
-
-echo $file
-echo $mimetype
+echo "Opening $file"
 open
