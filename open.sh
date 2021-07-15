@@ -16,7 +16,7 @@ echo -e "  open /sdcard/text.txt\n"
 intermux () {
 if [[ "$PWD" == *"/data/data/com.termux"* ]]; then
   rm /sdcard/tmp/* > /dev/null 2>&1 & # Pra nao ocupar espaço no dispositivo do usuario
-  cp $file /sdcard/tmp
+  cp $file /sdcard/tmp > /dev/null 2>&1 &
   file="/sdcard/tmp/${file##*/}"
 fi
 }
@@ -39,8 +39,8 @@ fi
 mkdir /sdcard/tmp > /dev/null 2>&1 &
 
 open () {
-  out=$(am start -a android.intent.action.VIEW -t $mimetype -d file://$file)
+  out=$(am start -a android.intent.action.VIEW -t $mimetype -d "file://$file")
 }
 
-echo "Opening $file"
+echo "Opening '$file'"
 open
