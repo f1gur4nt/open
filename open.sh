@@ -21,13 +21,13 @@ if [[ "$PWD" == *"/data/data/com.termux"* ]]; then
 fi
 }
 
+file=$1
 # Checa se todos os patametros estao vazios
 if [ -z "$file" ]; then
   helpme
   exit
 fi
 
-file=$1
 out=$(file --mime-type $file)
 mimetype="${out##*: }"
 
