@@ -21,15 +21,15 @@ if [[ "$PWD" == *"/data/data/com.termux"* ]]; then
 fi
 }
 
-file=$1
-out=$(file --mime-type $file)
-mimetype="${out##*: }"
-
 # Checa se todos os patametros estao vazios
 if [ -z "$file" ]; then
   helpme
   exit
 fi
+
+file=$1
+out=$(file --mime-type $file)
+mimetype="${out##*: }"
 
 # Caso o parametro file nao estiver setando o fullpath do arquivo
 if [[ "$file" != *"/"* ]]; then
