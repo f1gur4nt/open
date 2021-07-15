@@ -1,4 +1,4 @@
-Open (version v 1.0)
+Open (version v 1.1)
 --
 Open is a Tool that uses "am start" (Android Activity Manager) for open the most types of files, videos, images, etc.
 
@@ -27,7 +27,7 @@ How to Install using Wget :
 
 How to Use :
 --
-      $ open [filetype] [filename]
+      $ open [filename]
 For Example :
 --
       $ open /sdcard/DCIM/Screenshots/screenshot.png
