@@ -1,17 +1,15 @@
 #!/bin/bash
 
-type=$1
-file=$2
-ext="${file##*.}"
+command -v file > /dev/null 2>&1 || apt install file -y
 
 helpme () {
-echo "Open 1.0 for Termux writed in shell script by f1gur4nt"
-echo -e "Usage: open [filetype] [filename]"
+echo "Open 1.1 for Termux writed in shell script by f1gur4nt"
+echo -e "Usage: open [filename]"
 echo "EX:"
-echo -e "  open image /sdcard/image.png"
-echo -e "  open video /sdcard/video.mp4"
-echo -e "  open audio /sdcard/audio.wav"
-echo -e "  open text /sdcard/text.txt\n"
+echo -e "  open /sdcard/image.png"
+echo -e "  open /sdcard/video.mp4"
+echo -e "  open /sdcard/audio.wav"
+echo -e "  open /sdcard/text.txt\n"
 }
 
 # Caso o PWD do usuario for o /data/data/com.termux/*, abrir arquivo no tempdir
@@ -23,8 +21,12 @@ if [[ "$PWD" == *"/data/data/com.termux"* ]]; then
 fi
 }
 
+file=$1
+out=$(file --mime-type $file)
+mimetype="${out##*: }"
+
 # Checa se todos os patametros estao vazios
-if [ -z "$type" ] && [ -z "$file" ] && [ -z "$ext" ]; then
+if [ -z "$file" ]; then
   helpme
   exit
 fi
@@ -37,9 +39,10 @@ fi
 mkdir /sdcard/tmp > /dev/null 2>&1 &
 
 open () {
-  out=$(am start -a android.intent.action.VIEW -t $type/$ext -d file://$file)
+  out=$(am start -a android.intent.action.VIEW -t $mimetype -d file://$file)
 }
 
 
 echo $file
+echo $mimetype
 open
